@@ -1,1 +1,0 @@
-# encurtido_almendra
