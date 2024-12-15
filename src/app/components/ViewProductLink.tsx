@@ -3,7 +3,7 @@ import React from 'react'
 
 interface ViewProductLinkProps {
     product_name: string;
-    product_id: string;
+    product_id: number;
 }
 
 const ViewProductLink = (props: ViewProductLinkProps) => {

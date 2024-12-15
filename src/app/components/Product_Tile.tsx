@@ -4,7 +4,7 @@ import { Children, FC } from "react";
 
 interface ProductTileProps {
     product_name: string;
-    product_id: string;
+    product_id: number;
     children?: React.ReactNode;
 }
 
