@@ -1,10 +1,12 @@
 import mongoose, { model, Schema } from "mongoose";
 
-interface IProduct {
+export interface IProduct {
+    id: string;
     name: string;
     price: number;
     imageURL?: string;
     description?: string;
+    children?: React.ReactNode;
 }
 const productsSchema = new Schema<IProduct>({
     name: { type: String, required: true },
