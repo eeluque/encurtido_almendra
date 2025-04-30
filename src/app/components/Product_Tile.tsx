@@ -4,8 +4,16 @@ import { Children, FC } from "react";
 import { IProduct } from "../apis/models/Products";
 
 //props.children is used to render the viewproductlink component
+interface ProductTileProps {
+    id?: string;
+    name?: string;
+    price?: number;
+    imageURL?: string;
+    description?: string;
+    children?: React.ReactNode;
+}
 
-export default function Product_Tile(props: IProduct): ReturnType<React.FC> {
+export default function Product_Tile(props: ProductTileProps): ReturnType<React.FC> {
     return (
         <div className="border-2 bg-cyan-600">
             <p>I'll be a product tile someday. This is my info:</p>

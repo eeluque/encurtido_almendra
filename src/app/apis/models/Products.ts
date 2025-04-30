@@ -1,9 +1,9 @@
-import mongoose, { model, Schema } from "mongoose";
+import mongoose, { model, Schema, models, Document } from "mongoose";
 
-export interface IProduct {
-    id: string;
-    name: string;
-    price: number;
+export interface IProduct extends Document {
+    id?: string;
+    name?: string;
+    price?: number;
     imageURL?: string;
     description?: string;
     children?: React.ReactNode;
@@ -16,4 +16,5 @@ const productsSchema = new Schema<IProduct>({
 
 });
 
-export default mongoose.models.Product || mongoose.model<IProduct>('Product', productsSchema)
+const Product = models.Product || model<IProduct>('Product', productsSchema);
+export default Product;
