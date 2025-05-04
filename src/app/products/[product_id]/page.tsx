@@ -2,8 +2,6 @@
 import Product_Tile from "../../components/Product_Tile";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from 'next/navigation';
-import Product, { IProduct } from "../../apis/models/Products";
-
 
 
 
