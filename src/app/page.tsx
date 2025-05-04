@@ -1,6 +1,7 @@
 import Product_Tile from "./components/Product_Tile";
 import ViewProductLink from "./components/ViewProductLink";
-import dbProvider from "./apis/db";
+import dbProvider from "./db/index";
+
 export default async function Home() {
 
   const db = new dbProvider();

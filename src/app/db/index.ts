@@ -6,7 +6,7 @@ import { pgSchema } from "drizzle-orm/pg-core"
 
 const db = drizzle(process.env.DATABASE_URL!);
 
-class dbProvider {
+export default class dbProvider {
 
     async insertProducs() {
         for (const product of productsArray) {
