@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 interface ViewProductLinkProps {
-    product_id?: string;
+    product_id?: number;
 }
 
 const ViewProductLink = (props: ViewProductLinkProps) => {

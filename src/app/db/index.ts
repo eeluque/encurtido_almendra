@@ -3,6 +3,7 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import { productsTable } from './schema';
 import { productsArray, IProduct } from '../apis/products';
 import { pgSchema } from "drizzle-orm/pg-core"
+import { eq } from 'drizzle-orm';
 
 const db = drizzle(process.env.DATABASE_URL!);
 
@@ -24,7 +25,12 @@ export default class dbProvider {
         }
     }
 
-    async getProducts() {
+    async getProducts(): Promise<IProduct[]> {
         const products = await db.select().from(productsTable);
+        return products as IProduct[];
+    }
+    async getProductById(product_id: string): Promise<IProduct | null> {
+        const product = await db.select().from(productsTable).where(eq(productsTable.id, Number(product_id)));
+        return product.length > 0 ? product[0] as IProduct : null;
     }
 }
