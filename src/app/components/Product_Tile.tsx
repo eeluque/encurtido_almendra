@@ -14,11 +14,10 @@ interface ProductTileProps {
 
 export default function Product_Tile(props: ProductTileProps): ReturnType<React.FC> {
     return (
-        <div className="border-2 bg-cyan-600">
-            <p>Name: {props.name}</p>
-            <p>Description: {props.description}</p>
-            <p>Price: {props.price}</p>
-
+        <div className="border-2 bg-cyan-600 p-2">
+            <p>{props.name}</p>
+            <p>{props.description}</p>
+            <p>{props.price}</p>
             {props.children}
         </div>)
 }

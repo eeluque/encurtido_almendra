@@ -10,7 +10,7 @@ export default async function Home() {
   return (
 
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 p-2">
         {products!.map(product => {
           return (
             <Product_Tile key={product.id} name={product.name} description={product.description} price={product.price}>
