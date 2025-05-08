@@ -13,7 +13,7 @@ export default function Header() {
 
     return (
         <>
-            <ul className={clsx('justify-start flex pt-6 pb-6 bg-slate-50 opacity-50 md:grid-cols-2', { 'sm:hidden': isShowing })}>
+            <ul className={clsx('justify-start flex pt-6 pb-6 bg-slate-50 opacity-50', { 'sm:hidden md:grid-cols-2': isShowing })}>
                 <li className='ml-6'>Inicio</li>
                 <li className='ml-6'>Quienes somos</li>
                 <li className='ml-6'>Recetas</li>
