@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { IconMenu2 } from '@tabler/icons-react';
 export default function Header() {
 
-    let isShowing = true;
+    let isShowing = false;
 
     function dropHamburger(): void {
         let isShowing: boolean = false;
@@ -13,13 +13,13 @@ export default function Header() {
 
     return (
         <>
-            <ul className={clsx('justify-start flex pt-6 pb-6 bg-slate-50 opacity-50', { 'sm:hidden md:grid-cols-2': isShowing })}>
+            <ul className={clsx('justify-start flex pt-6 pb-6 bg-slate-50 opacity-50', { 'sm:hidden': isShowing })}>
                 <li className='ml-6'>Inicio</li>
                 <li className='ml-6'>Quienes somos</li>
                 <li className='ml-6'>Recetas</li>
                 <li className='ml-6'>Contactenos</li>
             </ul>
-            <div className='sm:hidden'>
+            <div className=''>
                 <IconMenu2 />
             </div>
             <div className="bg-color-[#f0c7d9] w-full py-2 flex justify-center ">
