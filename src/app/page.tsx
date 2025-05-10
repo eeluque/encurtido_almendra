@@ -2,6 +2,7 @@ import Product_Tile from "./components/Product_Tile";
 import ViewProductLink from "./components/ViewProductLink";
 import dbProvider from "./db/index";
 import { IProduct } from "./apis/products";
+import onions from '../public/images/pickled-red-onions.jpg'
 
 export default async function Home() {
 
@@ -10,10 +11,10 @@ export default async function Home() {
   return (
 
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 p-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 mt-20 p-2">
         {products!.map(product => {
           return (
-            <Product_Tile key={product.id} name={product.name} description={product.description} price={product.price}>
+            <Product_Tile key={product.id} name={product.name} description={product.description} price={product.price} imageURL={product.imageURL}>
               <ViewProductLink product_id={product.id}></ViewProductLink>
             </Product_Tile>
           )

@@ -7,8 +7,6 @@ export default async function Page({
   params: { product_id: string };
 }) {
   const { product_id } = await params;
-  console.log(`This is the search item ${product_id}`);
-
   const db = new dbProvider();
   const product = await db.getProductById(product_id);
 

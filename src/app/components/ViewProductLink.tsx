@@ -9,9 +9,6 @@ const ViewProductLink = (props: ViewProductLinkProps) => {
     return (
         <Link href={{
             pathname: `products/${props.product_id}`,
-            query: {
-                product_id: props.product_id,
-            },
         }}>View</Link>
     )
 }
