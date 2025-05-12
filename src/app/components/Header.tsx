@@ -38,10 +38,10 @@ export default function Header() {
                 />
             </div>
             <ul className={clsx('pt-6 pb-6 bg-slate-50 opacity-50 sm:hidden justify-items-center-safe', { 'hidden': keepHidden })}>
-                <li className='p-1 hover:underline'><Link href="/">Inicio</Link></li>
-                <li className='p-1 hover:underline'><Link href="/contact">Quienes somos</Link></li>
-                <li className='p-1 hover:underline'><Link href="/recipes">Recetas</Link></li>
-                <li className='p-1 hover:underline'><Link href="/contact">Contactenos</Link></li>
+                <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/">Inicio</Link></li>
+                <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/contact">Quienes somos</Link></li>
+                <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/recipes">Recetas</Link></li>
+                <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/contact">Contactenos</Link></li>
             </ul>
 
         </>
