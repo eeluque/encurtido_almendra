@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <>
-            <ul className={clsx('justify-start flex pt-6 pb-6 bg-slate-50 opacity-50 max-sm:hidden')}>
+            <ul className={clsx('justify-start flex pt-2 pb-2 bg-slate-50 opacity-50 max-sm:hidden')}>
                 <li className='ml-6 p-2 hover:underline'><Link href="/">Inicio</Link></li>
                 <li className='ml-6 p-2 hover:underline'><Link href="/contact">Quienes somos</Link></li>
                 <li className='ml-6 p-2 hover:underline'><Link href="/recipes">Recetas</Link></li>
@@ -28,7 +28,7 @@ export default function Header() {
                 </button>
 
             </div>
-            <div className="bg-color-[#f0c7d9] w-full py-2 flex justify-center ">
+            <div className="bg-color-[#f0c7d9] w-full flex justify-center ">
                 <Image
                     src={logo}
                     alt="Logo image"

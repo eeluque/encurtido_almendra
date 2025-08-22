@@ -3,6 +3,7 @@ import ViewProductLink from "./components/ViewProductLink";
 import dbProvider from "./db/index";
 import { IProduct } from "./apis/products";
 import onions from '../public/images/pickled-red-onions.jpg'
+import Hero from "./components/Hero";
 
 export default async function Home() {
 
@@ -11,6 +12,7 @@ export default async function Home() {
   return (
 
     <>
+      <Hero />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 mt-12 p-2">
         {products!.map(product => {
           return (
