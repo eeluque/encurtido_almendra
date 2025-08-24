@@ -2,8 +2,8 @@ import { IconBrandInstagram } from '@tabler/icons-react';
 
 export default function Footer() {
     return (<>
-        <footer className="bg-[#f0c7d9] text-white w-full h-28 bottom-0">
-            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+        <footer className="bg- text-white w-full h-28 bottom-0 flex-col flex">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 mt-auto">
                 <p className="text-sm text-center md:text-left">
                     © {new Date().getFullYear()} Encurtidos Almendra. Derechos Reservados.
                 </p>
@@ -18,6 +18,7 @@ export default function Footer() {
                     <IconBrandInstagram size={24} />
                 </div>
             </div>
+            <p> <a href="https://www.vecteezy.com/free-photos/pickled-onions">Pickled Onions Stock photos by Vecteezy</a></p>
         </footer>
     </>)
 }

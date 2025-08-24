@@ -13,10 +13,10 @@ export default async function Page({
 
   return (
 
-    <>
+    <div>
       <h1>This is where you'll see more about the product you clicked</h1>
       <Product_Tile id={product?.id} name={product?.name} price={product?.price} description={product?.description}></Product_Tile>
-    </>
+    </div>
   )
 }
 
