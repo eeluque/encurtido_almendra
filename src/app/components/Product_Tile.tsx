@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import onions from '../../public/images/pickled-red-onions.jpg';
+import onions from '../../public/images/encurtido.jpg';
 //props.children is used to render the viewproductlink component
 interface ProductTileProps {
     id?: number;
