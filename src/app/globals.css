@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -27,4 +28,19 @@
 
 body {
   background-color: #f0c7d9;
+}
+
+/*CSS styling for embla carousel*/
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }

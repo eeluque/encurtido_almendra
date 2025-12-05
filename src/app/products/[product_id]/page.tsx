@@ -1,6 +1,9 @@
 import dbProvider from "@/app/db";
-import Product_Tile from "../../components/Product_Tile";
 import ProductDetailTile from "@/app/components/ProductDetailTile";
+import Carousel from "@/app/components/Carousel";
+
+
+
 
 export default async function Page({
   params
@@ -10,6 +13,7 @@ export default async function Page({
   const { product_id } = await params;
   const db = new dbProvider();
   const product = await db.getProductById(product_id);
+
 
 
   return (
@@ -26,6 +30,7 @@ export default async function Page({
         </div>
         <div>
           <h1>This is where you'll see more about the product you clicked</h1>
+          <Carousel></Carousel>
         </div>
 
       </div>
