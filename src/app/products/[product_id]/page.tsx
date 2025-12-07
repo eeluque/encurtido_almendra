@@ -1,6 +1,8 @@
 import dbProvider from "@/app/db";
 import ProductDetailTile from "@/app/components/ProductDetailTile";
-import Carousel from "@/app/components/Carousel";
+import Slideshow from "@/app/components/Slideshow";
+import Hero from "@/app/components/Hero";
+import Recipes from "@/app/recipes/page";
 
 
 
@@ -18,7 +20,7 @@ export default async function Page({
 
   return (
     <>
-
+      <Hero />
       <div className="grid grid-cols-2 border-2">
 
         <div>
@@ -30,7 +32,8 @@ export default async function Page({
         </div>
         <div>
           <h1>This is where you'll see more about the product you clicked</h1>
-          <Carousel></Carousel>
+          <Slideshow></Slideshow>
+          <Recipes />
         </div>
 
       </div>

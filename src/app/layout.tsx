@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { inter } from "../app/fonts/fonts";
+import Hero from "./components/Hero";
+
 
 
 export const metadata: Metadata = {

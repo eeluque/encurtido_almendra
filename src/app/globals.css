@@ -41,6 +41,10 @@ body {
 }
 
 .embla__slide {
-  flex: 0 0 100%;
+  flex: 0 0 50%;
   min-width: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  /* Each slide covers 80% of the viewport */
 }

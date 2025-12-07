@@ -6,7 +6,7 @@ export const productsTable = pgTable("products", {
     name: varchar("name", { length: 100 }).notNull(),
     description: text("description"),
     price: decimal("price", { precision: 10, scale: 2 }).notNull(),
-    imageURL: varchar("imageURL", { length: 255 }),
-    createdAt: timestamp("createdAt").defaultNow(),
-    updatedAt: timestamp("updatedAt").defaultNow(),
+    image_url: varchar("image_url", { length: 255 }),
+    created_at: timestamp("created_at").defaultNow(),
+    updated_at: timestamp("updated_at").defaultNow(),
 });

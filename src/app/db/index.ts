@@ -15,10 +15,10 @@ export default class dbProvider {
             await db.insert(productsTable).values({
                 name: product.name,
                 description: product.description,
-                imageURL: product.imageURL,
+                image_url: product.image_url,
                 price: product.price,
-                createdAt: new Date(product.createdAt),
-                updatedAt: new Date(product.updatedAt)
+                created_at: new Date(product.createdAt),
+                updated_at: new Date(product.updatedAt)
             });
             const products = await db.select().from(productsTable);
             console.log('Products:', products);

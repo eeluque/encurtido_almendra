@@ -1,14 +1,20 @@
 'use client'
-import React, { useCallback } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import { useCallback, useEffect } from 'react'
 import Image from 'next/image';
 import onions from '@/public/images/encurtido.jpg';
 import jar from '@/public/images/pickled-red-onions.jpg';
-//import Autoplay from 'embla-carousel-autoplay'
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import Autoscroll from 'embla-carousel-auto-scroll'
 
-export default function Carousel() {
+export default function Slideshow() {
 
-    const [emblaRef, emblaApi] = useEmblaCarousel();
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoscroll()]);
+    console.log("this is the emblaAPI");
+    console.log(emblaApi);
+    console.log("this is the emblaRef")
+
+    console.log(emblaRef);
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
@@ -17,6 +23,7 @@ export default function Carousel() {
     const scrollNext = useCallback(() => {
         if (emblaApi) emblaApi.scrollNext()
     }, [emblaApi])
+
     return (
         <>
             <div className="embla" >
