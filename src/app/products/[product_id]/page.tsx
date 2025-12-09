@@ -2,7 +2,8 @@ import dbProvider from "@/app/db";
 import ProductDetailTile from "@/app/components/ProductDetailTile";
 import Slideshow from "@/app/components/Slideshow";
 import Hero from "@/app/components/Hero";
-import Recipes from "@/app/recipes/page";
+import Recipes from "@/app/components/Recipes";
+import ProductDetailTitle from "@/app/components/ProductDetailTitle";
 
 
 
@@ -10,7 +11,7 @@ import Recipes from "@/app/recipes/page";
 export default async function Page({
   params
 }: {
-  params: { product_id: string };
+  params: { product_id: number };
 }) {
   const { product_id } = await params;
   const db = new dbProvider();
@@ -20,7 +21,7 @@ export default async function Page({
 
   return (
     <>
-      <Hero />
+      <ProductDetailTitle product_name={product?.name} />
       <div className="grid grid-cols-2 border-2">
 
         <div>
@@ -33,7 +34,7 @@ export default async function Page({
         <div>
           <h1>This is where you'll see more about the product you clicked</h1>
           <Slideshow></Slideshow>
-          <Recipes />
+          <Recipes product_id={product?.id} />
         </div>
 
       </div>

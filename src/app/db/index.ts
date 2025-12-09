@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
-import { productsTable } from './schema';
+import { productsTable, recipesTable, Recipes } from './schema';
 import { productsArray, IProduct } from '../apis/products';
 import { pgSchema } from "drizzle-orm/pg-core"
 import { eq } from 'drizzle-orm';
@@ -29,8 +29,17 @@ export default class dbProvider {
         const products = await db.select().from(productsTable);
         return products as IProduct[];
     }
-    async getProductById(product_id: string): Promise<IProduct | null> {
-        const product = await db.select().from(productsTable).where(eq(productsTable.id, Number(product_id)));
+    async getProductById(product_id: number): Promise<IProduct | null> {
+        if (!product_id) {
+            return null;
+        }
+        const product = await db.select().from(productsTable).where(eq(productsTable.id, product_id));
         return product.length > 0 ? product[0] as IProduct : null;
+    }
+
+    async getRecipesById(product_id: number): Promise<Recipes[] | null> {
+
+        const recipes: Recipes[] = await db.select().from(recipesTable).where(eq(recipesTable.product_id, product_id));
+        return recipes.length > 0 ? recipes : null;
     }
 }

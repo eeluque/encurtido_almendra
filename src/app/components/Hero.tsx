@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import pickles from '../../public/images/pickles.jpg'
 import { useState } from 'react';
-export default function Hero() {
+
+export default function Hero(): ReturnType<React.FC> {
 
     let [currentlyShowing, showNext] = useState(0);
 
