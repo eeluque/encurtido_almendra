@@ -6,9 +6,11 @@ interface RecipesDetail {
 export default function RecipesDetail({ title, body }: RecipesDetail) {
 
     return (
-        <ul>
-            <li>{title}</li>
-            <li>{body}</li>
-        </ul>
+        <div className="m-2">
+            <ul>
+                <li className="font-semibold">{title}</li>
+                <li className="italic">{body}</li>
+            </ul>
+        </div>
     )
 }

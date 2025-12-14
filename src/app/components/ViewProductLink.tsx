@@ -7,9 +7,11 @@ interface ViewProductLinkProps {
 
 const ViewProductLink = (props: ViewProductLinkProps) => {
     return (
-        <Link href={{
-            pathname: `products/${props.product_id}`,
-        }}>View</Link>
+        <button className='rounded-full bg-fuchsia-400/20 p-2 px-4.5 my-1'>
+            <Link href={{
+                pathname: `products/${props.product_id}`,
+            }}><p>Ver</p></Link>
+        </button>
     )
 }
 

@@ -15,11 +15,12 @@ export default function Header() {
 
     return (
         <>
+            {/*Desktop Navbar*/}
             <ul className={clsx('justify-start flex pt-2 pb-2 bg-slate-50 opacity-50 max-sm:hidden')}>
                 <li className='ml-6 p-2 hover:underline'><Link href="/">Inicio</Link></li>
                 <li className='ml-6 p-2 hover:underline'><Link href="/contact">Quienes somos</Link></li>
                 <li className='ml-6 p-2 hover:underline'><Link href="/recipes">Recetas</Link></li>
-                <li className='ml-6 p-2 hover:underline'><Link href="/contact">Contactenos</Link></li>
+                {/*<li className='ml-6 p-2 hover:underline'><Link href="/contact">Contactenos</Link></li>*/}
             </ul>
             <div className='sm:hidden bg-slate-50 p-2'>
 
@@ -37,11 +38,12 @@ export default function Header() {
                     priority
                 />
             </div>
-            <ul className={clsx('pt-6 pb-6 bg-slate-50 opacity-50 sm:hidden justify-items-center-safe', { 'hidden': keepHidden })}>
+            {/*mobile Navbar*/}
+            <ul className={clsx('pt-6 pb-6 bg-slate-50 opacity-50 sm:hidden text-center', { 'hidden': keepHidden })}>
                 <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/">Inicio</Link></li>
                 <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/contact">Quienes somos</Link></li>
                 <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/recipes">Recetas</Link></li>
-                <li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/contact">Contactenos</Link></li>
+                {/*<li className='p-1 hover:underline' onClick={dropHamburger}><Link href="/contact">Contactenos</Link></li>*/}
             </ul>
 
         </>

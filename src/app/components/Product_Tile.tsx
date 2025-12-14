@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import onions from '../../public/images/encurtido.jpg';
+import Link from 'next/link';
 //props.children is used to render the viewproductlink component
 interface ProductTileProps {
-    id?: number;
+    product_id?: number;
     name?: string;
     price?: string;
     imageURL?: string;
@@ -12,17 +13,22 @@ interface ProductTileProps {
 
 export default function Product_Tile(props: ProductTileProps): ReturnType<React.FC> {
     return (
-        <div className="border-2 p-2 justify-items-center-safe">
-            <Image
-                //to do: validate there exists an image URL and name for alt text
-                src={onions}
-                alt={props.name!}
-                width={180}
-                height={220}
-            />
+        <div className="my-6 text-center">
+
+            <Link href={{
+                pathname: `products/${props.product_id}`,
+            }}>
+                <Image
+                    //to do: validate there exists an image URL and name for alt text
+                    src={onions}
+                    alt={props.name!}
+                    width={220}
+                    height={260}
+                />
+            </Link>
             <p>{props.name}</p>
-            {/* <p>{props.description}</p> */}
             <p>{props.price} Lps</p>
             {props.children}
+
         </div>)
 }

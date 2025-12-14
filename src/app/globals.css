@@ -37,14 +37,16 @@ body {
 }
 
 .embla__container {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  height: fit-content;
+  width: fit-content;
+  place-items: center;
+
 }
 
 .embla__slide {
-  flex: 0 0 50%;
-  min-width: 0;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 80%;
+  margin-inline: auto;
   /* Each slide covers 80% of the viewport */
 }

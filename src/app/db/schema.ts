@@ -1,5 +1,5 @@
 import { integer, pgTable, varchar, decimal, text, timestamp } from "drizzle-orm/pg-core";
-import { pgSchema } from "drizzle-orm/pg-core"
+//import { pgSchema } from "drizzle-orm/pg-core"
 
 export const productsTable = pgTable("products", {
     id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
@@ -22,7 +22,7 @@ export const recipesTable = pgTable("recipes", {
 
 //models
 
-export interface Recipes {
+export interface RecipesModel {
     id: number,
     title: string,
     body: string,

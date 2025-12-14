@@ -1,15 +1,15 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
-import { productsTable, recipesTable, Recipes } from './schema';
+import { productsTable, recipesTable, RecipesModel } from './schema';
 import { productsArray, IProduct } from '../apis/products';
-import { pgSchema } from "drizzle-orm/pg-core"
+//import { pgSchema } from "drizzle-orm/pg-core"
 import { eq } from 'drizzle-orm';
 
 const db = drizzle(process.env.DATABASE_URL!);
 
 export default class dbProvider {
 
-    async insertProducs() {
+    async insertProducts() {
         for (const product of productsArray) {
 
             await db.insert(productsTable).values({
@@ -37,9 +37,13 @@ export default class dbProvider {
         return product.length > 0 ? product[0] as IProduct : null;
     }
 
-    async getRecipesById(product_id: number): Promise<Recipes[] | null> {
+    async getRecipesById(product_id: number): Promise<RecipesModel[] | null> {
 
-        const recipes: Recipes[] = await db.select().from(recipesTable).where(eq(recipesTable.product_id, product_id));
+        const recipes: RecipesModel[] = await db.select().from(recipesTable).where(eq(recipesTable.product_id, product_id));
+        return recipes.length > 0 ? recipes : null;
+    }
+    async getRecipes(): Promise<RecipesModel[] | null> {
+        const recipes: RecipesModel[] = await db.select().from(recipesTable);
         return recipes.length > 0 ? recipes : null;
     }
 }

@@ -1,21 +1,17 @@
 'use client'
-import { useCallback, useEffect } from 'react'
+import { useCallback } from 'react'
 import Image from 'next/image';
 import onions from '@/public/images/encurtido.jpg';
 import jar from '@/public/images/pickled-red-onions.jpg';
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import Autoscroll from 'embla-carousel-auto-scroll'
 
-export default function Slideshow() {
+export interface SlideshowProps {
+    product_description: string | null;
+}
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoscroll()]);
-    console.log("this is the emblaAPI");
-    console.log(emblaApi);
-    console.log("this is the emblaRef")
+export default function Slideshow({ product_description }: SlideshowProps) {
 
-    console.log(emblaRef);
-
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
     }, [emblaApi])
@@ -25,22 +21,27 @@ export default function Slideshow() {
     }, [emblaApi])
 
     return (
-        <>
-            <div className="embla" >
-                <div className="embla__viewport" ref={emblaRef}>
-                    <div className="embla__container">
-                        <div className="embla__slide"><Image src={onions} alt='pickled red onioons' width={180} height={120}></Image></div>
+        <div className='grid grid-cols-1 md:grid-cols-2 relative justify-center items-center w-full px-6 rounded-xl shadow-lg bg-fuchsia-100 my-2 p-4'>
+            <div className='embla justify-self-center'>
+                <div className='embla__viewport overflow-hidden grid' ref={emblaRef}>
+                    <div className='embla__container items-center'>
+                        <div className='embla__slide'><Image src={onions} alt='pickled red onions' width={180} height={120}></Image></div>
                         <div className="embla__slide"><Image src={jar} alt='pickled red onioons' width={180} height={120}></Image></div>
                         <div className="embla__slide"><Image src={onions} alt='pickled red onioons' width={180} height={120}></Image></div>
                     </div>
                 </div>
-                <button className="embla__prev" onClick={scrollPrev}>
-                    Prev
-                </button>
-                <button className="embla__next" onClick={scrollNext}>
-                    Next
-                </button>
             </div>
-        </>
+            <div>
+                <p className='text-center mt-3 italic'>{product_description}</p>
+                <div className='flex relative'>
+                    <button className="embla__prev p-2 text-gray-500 hover:text-rose-700 mx-auto" onClick={scrollPrev}>
+                        ←
+                    </button>
+                    <button className="embla__next p-2 text-gray-500 hover:text-rose-700 mx-auto" onClick={scrollNext}>
+                        →
+                    </button>
+                </div>
+            </div>
+        </div>
     )
 }
