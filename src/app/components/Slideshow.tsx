@@ -1,8 +1,6 @@
 'use client'
 import { useCallback } from 'react'
 import Image from 'next/image';
-import onions from '@/public/images/encurtido.jpg';
-import jar from '@/public/images/pickled-red-onions.jpg';
 import useEmblaCarousel from 'embla-carousel-react';
 
 export interface SlideshowProps {
@@ -25,9 +23,9 @@ export default function Slideshow({ product_description }: SlideshowProps) {
             <div className='embla justify-self-center'>
                 <div className='embla__viewport overflow-hidden grid' ref={emblaRef}>
                     <div className='embla__container items-center'>
-                        <div className='embla__slide'><Image src={onions} alt='pickled red onions' width={180} height={120}></Image></div>
-                        <div className="embla__slide"><Image src={jar} alt='pickled red onioons' width={180} height={120}></Image></div>
-                        <div className="embla__slide"><Image src={onions} alt='pickled red onioons' width={180} height={120}></Image></div>
+                        <div className='embla__slide'><Image src='/images/encurtido.jpg' alt='pickled red onions' width={180} height={120}></Image></div>
+                        <div className="embla__slide"><Image src='/images/pickled-red-onions.jpg' alt='pickled red onioons' width={180} height={120}></Image></div>
+                        <div className="embla__slide"><Image src='/images/encurtido.jpg' alt='pickled red onioons' width={180} height={120}></Image></div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 'use client';
-import Image from 'next/image'
-import logo from '@/public/images/logo.png'
+import Image from 'next/image';
 import clsx from "clsx";
 import { IconMenu2 } from '@tabler/icons-react';
 import { useState } from 'react';
@@ -31,7 +30,7 @@ export default function Header() {
             </div>
             <div className="bg-color-[#f0c7d9] w-full flex justify-center ">
                 <Image
-                    src={logo}
+                    src='/images/logo.png'
                     alt="Logo image"
                     width={180}
                     height={240}

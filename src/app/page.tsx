@@ -2,7 +2,6 @@ import Product_Tile from "./components/Product_Tile";
 import ViewProductLink from "./components/ViewProductLink";
 import dbProvider from "./db/index";
 import { IProduct } from "./apis/products";
-import onions from '../public/images/pickled-red-onions.jpg'
 import Hero from "./components/Hero";
 
 export default async function Home() {

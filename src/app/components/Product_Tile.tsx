@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import onions from '@/public/images/encurtido.jpg';
 import Link from 'next/link';
 //props.children is used to render the viewproductlink component
 interface ProductTileProps {
@@ -20,7 +19,7 @@ export default function Product_Tile(props: ProductTileProps): ReturnType<React.
             }}>
                 <Image
                     //to do: validate there exists an image URL and name for alt text
-                    src={onions}
+                    src="/images/encurtido.jpg"
                     alt={props.name!}
                     width={220}
                     height={260}

@@ -1,13 +1,10 @@
 'use client'
 import Image from 'next/image';
-import pickles from '@/public/images/pickles.jpg'
-import onions from "@/public/images/onions.jpg"
-import jars from "@/public/images/jars.jpg"
 import { useState, useEffect } from 'react';
 
 export default function Hero(): ReturnType<React.FC> {
 
-    const bgImages = [pickles, onions, jars];
+    const bgImages = ['/images/pickles.jpg', '/images/onions.jpg', '/images/jars.jpg'];
 
     let [index, setIndex] = useState(0);
 

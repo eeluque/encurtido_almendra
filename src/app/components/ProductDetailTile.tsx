@@ -1,7 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import onions from '@/public/images/encurtido.jpg';
-
 interface ProductDetailTile {
     id?: number;
     name?: string;
@@ -18,7 +16,7 @@ export default function ProductDetailTile(props: ProductDetailTile) {
         <div className="bg-fuchsia-100 rounded-xl shadow-lg border-2 p-2 flex flex-col items-center text-center mx-auto">
             <Image
                 //to do: validate there exists an image URL and name for alt text
-                src={onions}
+                src="/images/encurtido.jpg"
                 alt={props.name!}
                 width={440}
                 height={560}

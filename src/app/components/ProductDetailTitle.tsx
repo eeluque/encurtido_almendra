@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import titlebackgroundimage from "@/public/images/jars.jpg";
 interface ProductDetailTitleProps {
     product_name: string | undefined;
 }
@@ -8,7 +7,7 @@ export default function ProductDetailTitle({ product_name }: ProductDetailTitleP
     return (
         <section className="gap-y-4 text-shadow-white text-white bg-cover py-20 md:py-35 px-6 md:px-12 lg:px-24 overflow-hidden relative">
             <Image
-                src={titlebackgroundimage}
+                src="/images/jars.jpg"
                 alt={`Title image for the product ${product_name}`}
                 className='object-cover'
                 loading='eager'
