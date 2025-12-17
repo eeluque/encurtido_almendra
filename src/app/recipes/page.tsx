@@ -1,4 +1,3 @@
-import Recipes from "../components/Recipes";
 import RecipesDetail from "../components/RecipesDetail";
 import ViewRecipeLink from "../components/ViewRecipeLink";
 import dbProvider from "../db";

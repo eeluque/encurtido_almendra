@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import pickles from '../../public/images/pickles.jpg'
+import pickles from '@/public/images/pickles.jpg'
 import onions from "@/public/images/onions.jpg"
 import jars from "@/public/images/jars.jpg"
 import { useState, useEffect } from 'react';

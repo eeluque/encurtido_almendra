@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import onions from '../../public/images/encurtido.jpg';
+import onions from '@/public/images/encurtido.jpg';
 
 interface ProductDetailTile {
     id?: number;

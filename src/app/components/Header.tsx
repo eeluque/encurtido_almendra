@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image'
-import logo from '../../public/images/logo.png'
+import logo from '@/public/images/logo.png'
 import clsx from "clsx";
 import { IconMenu2 } from '@tabler/icons-react';
 import { useState } from 'react';
