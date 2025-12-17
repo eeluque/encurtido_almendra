@@ -21,7 +21,7 @@ export default function Slideshow({ product_description }: SlideshowProps) {
     }, [emblaApi])
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 relative justify-center items-center w-full px-6 rounded-xl shadow-lg bg-fuchsia-100 my-2 p-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 relative justify-center items-center w-full px-6 rounded-xl shadow-lg bg-fuchsia-100 p-4'>
             <div className='embla justify-self-center'>
                 <div className='embla__viewport overflow-hidden grid' ref={emblaRef}>
                     <div className='embla__container items-center'>

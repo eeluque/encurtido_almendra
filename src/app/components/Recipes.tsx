@@ -1,10 +1,11 @@
 import dbProvider from "../db";
 import RecipesDetail from "./RecipesDetail";
+import ViewRecipeLink from "./ViewRecipeLink";
 
 interface RecipesProps {
     product_id?: number | null;
     recipe_id?: number | null;
-    //children?: React.ReactNode;
+    children?: React.ReactNode;
 
 }
 export default async function Recipes({ product_id, recipe_id }: RecipesProps) {
@@ -19,15 +20,17 @@ export default async function Recipes({ product_id, recipe_id }: RecipesProps) {
     const db = new dbProvider();
     const recipes = await db.getRecipesById(product_id);
     return (
-        <>
-            <div className="gap-4 rounded-xl shadow-lg bg-fuchsia-100 border-2 p-6 text center my-2">
-                {recipes?.map(recipe => {
-                    return (
-                        <RecipesDetail key={recipe.id} title={recipe.title} body={recipe.body} />
-                    )
-                })}
-            </div>
-
-        </>
-    )
+        <div className="gap-4 rounded-xl shadow-lg bg-fuchsia-100 border-2 p-6 text center my-2">
+            {recipes?.map(recipe => {
+                return (
+                    <div className="m-2" key={recipe.id}>
+                        <ul>
+                            <li className="font-semibold">{recipe.title}</li>
+                            <li className="italic">{recipe.description}</li>
+                            {/* <ViewRecipeLink recipe_id={recipe.id}>Ver receta</ViewRecipeLink> */}
+                        </ul>
+                    </div>
+                )
+            })}
+        </div>)
 }

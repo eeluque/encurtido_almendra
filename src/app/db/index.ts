@@ -46,4 +46,9 @@ export default class dbProvider {
         const recipes: RecipesModel[] = await db.select().from(recipesTable);
         return recipes.length > 0 ? recipes : null;
     }
+    async getSingleRecipeById(recipe_id: number): Promise<RecipesModel | null> {
+
+        const recipe: RecipesModel[] = await db.select().from(recipesTable).where(eq(recipesTable.id, recipe_id));
+        return recipe.length > 0 ? recipe[0] : null;
+    }
 }
