@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { neon } from "@neondatabase/serverless";
 import RecipesDetail from "../components/RecipesDetail";
 import ViewRecipeLink from "../components/ViewRecipeLink";
