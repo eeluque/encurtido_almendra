@@ -3,6 +3,7 @@ import ProductDetailTile from "@/app/components/ProductDetailTile";
 import Slideshow from "@/app/components/Slideshow";
 import Recipes from "@/app/components/Recipes";
 import ProductDetailTitle from "@/app/components/ProductDetailTitle";
+import { neon } from "@neondatabase/serverless";
 
 export default async function Page({
   params
@@ -19,7 +20,7 @@ export default async function Page({
       </div>
     );
   }
-
+  const sql = neon(process.env.DATABASE_URL!);
   const db = new dbProvider();
   const product = await db.getProductById(product_id);
 

@@ -1,11 +1,14 @@
+export const dynamic = 'force-dynamic';
 import Product_Tile from "./components/Product_Tile";
 import ViewProductLink from "./components/ViewProductLink";
 import dbProvider from "./db/index";
 import { IProduct } from "./apis/products";
 import Hero from "./components/Hero";
+import { neon } from "@neondatabase/serverless";
 
 export default async function Home() {
 
+  const sql = neon(process.env.DATABASE_URL!);
   const db = new dbProvider();
   const products: IProduct[] = await db.getProducts();
   return (

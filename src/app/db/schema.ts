@@ -19,7 +19,8 @@ export const recipesTable = pgTable("recipes", {
     updated_at: timestamp("updated_at").defaultNow(),
     created_at: timestamp("created_at").defaultNow(),
     body: varchar("body").notNull()
-});
+},
+);
 
 //models
 

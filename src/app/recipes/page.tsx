@@ -1,9 +1,11 @@
+import { neon } from "@neondatabase/serverless";
 import RecipesDetail from "../components/RecipesDetail";
 import ViewRecipeLink from "../components/ViewRecipeLink";
 import dbProvider from "../db";
 import type { RecipesModel } from "../db/schema";
 
 export default async function RecipesPage() {
+    const sql = neon(process.env.DATABASE_URL!);
     const db = new dbProvider();
     const recipes: RecipesModel[] = (await db.getRecipes()) ?? [];
     return (

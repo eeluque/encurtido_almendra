@@ -1,12 +1,14 @@
 import RecipeMarkdown from "@/app/components/RecipeMarkdown";
 import Slideshow from "@/app/components/Slideshow";
 import dbProvider from "@/app/db";
+import { neon } from "@neondatabase/serverless";
 
 
 export default async function RecipeDetailPage({ params }: { params: Promise<{ recipe_id: string }> }) {
 
     const { recipe_id } = await params;
     const id = Number(recipe_id);
+    const sql = neon(process.env.DATABASE_URL!);
     const db = new dbProvider();
     const recipe = await db.getSingleRecipeById(id);
 

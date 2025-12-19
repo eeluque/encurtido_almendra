@@ -1,11 +1,14 @@
-import 'dotenv/config';
-import { drizzle } from 'drizzle-orm/node-postgres';
+import { drizzle } from 'drizzle-orm/neon-http';
 import { productsTable, recipesTable, RecipesModel } from './schema';
 import { productsArray, IProduct } from '../apis/products';
-//import { pgSchema } from "drizzle-orm/pg-core"
+import { neon } from '@neondatabase/serverless';
 import { eq } from 'drizzle-orm';
+import { config } from "dotenv";
 
-const db = drizzle(process.env.DATABASE_URL!);
+config({ path: ".env.development.local" });
+
+const sql = neon(process.env.DATABASE_URL!);
+export const db = drizzle({ client: sql });
 
 export default class dbProvider {
 

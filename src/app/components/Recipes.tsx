@@ -1,3 +1,4 @@
+import { neon } from "@neondatabase/serverless";
 import dbProvider from "../db";
 import RecipesDetail from "./RecipesDetail";
 import ViewRecipeLink from "./ViewRecipeLink";
@@ -17,6 +18,7 @@ export default async function Recipes({ product_id, recipe_id }: RecipesProps) {
             </div>
         );
     }
+    const sql = neon(process.env.DATABASE_URL!);
     const db = new dbProvider();
     const recipes = await db.getRecipesById(product_id);
     return (
