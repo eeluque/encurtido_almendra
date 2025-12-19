@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import RecipeMarkdown from "@/app/components/RecipeMarkdown";
 import Slideshow from "@/app/components/Slideshow";
 import dbProvider from "@/app/db";

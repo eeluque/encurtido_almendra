@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import dbProvider from "@/app/db";
 import ProductDetailTile from "@/app/components/ProductDetailTile";
 import Slideshow from "@/app/components/Slideshow";

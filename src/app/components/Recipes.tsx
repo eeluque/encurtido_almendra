@@ -1,7 +1,6 @@
+export const dynamic = 'force-dynamic';
 import { neon } from "@neondatabase/serverless";
 import dbProvider from "../db";
-import RecipesDetail from "./RecipesDetail";
-import ViewRecipeLink from "./ViewRecipeLink";
 
 interface RecipesProps {
     product_id?: number | null;
