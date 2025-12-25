@@ -15,7 +15,7 @@ export default async function Home() {
 
     <>
       <Hero />
-      <div className="grid justify-items-center grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 place-items-center">
         {products!.map(product => {
           return (
             <Product_Tile key={product.id} name={product.name} description={product.description} price={product.price} imageURL={product.image_url} product_id={product.id}>

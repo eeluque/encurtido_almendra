@@ -12,7 +12,7 @@ interface ProductTileProps {
 
 export default function Product_Tile(props: ProductTileProps): ReturnType<React.FC> {
     return (
-        <div className="my-6 text-center">
+        <div className="my-6 text-center place-items-center">
 
             <Link href={{
                 pathname: `products/${props.product_id}`,

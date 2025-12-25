@@ -27,7 +27,7 @@ export default async function Recipes({ product_id, recipe_id }: RecipesProps) {
                     <div className="m-2" key={recipe.id}>
                         <ul>
                             <li className="font-semibold">{recipe.title}</li>
-                            <li className="italic">{recipe.description}</li>
+                            <li className="">{recipe.description}</li>
                             {/* <ViewRecipeLink recipe_id={recipe.id}>Ver receta</ViewRecipeLink> */}
                         </ul>
                     </div>
