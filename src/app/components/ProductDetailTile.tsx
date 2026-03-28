@@ -1,32 +1,58 @@
-import React from 'react'
-import Image from 'next/image'
-interface ProductDetailTile {
-    id?: number;
-    name?: string;
-    price?: string;
-    imageURL?: string;
-    description?: string;
-    children?: React.ReactNode;
+import Image from "next/image";
+
+const FALLBACK = "/images/encurtido.jpg";
+
+function resolveSrc(imageURL?: string) {
+  const t = imageURL?.trim();
+  if (t && t.length > 0) return t;
+  return FALLBACK;
 }
 
-export default function ProductDetailTile(props: ProductDetailTile) {
+interface ProductDetailTileProps {
+  id?: number;
+  name?: string;
+  price?: string;
+  imageURL?: string;
+  description?: string;
+  children?: React.ReactNode;
+}
 
-    return (
+export default function ProductDetailTile(props: ProductDetailTileProps) {
+  const src = resolveSrc(props.imageURL);
+  const remote = src.startsWith("http");
 
-        <div className="bg-fuchsia-100 rounded-xl shadow-lg border-2 p-2 flex flex-col items-center text-center mx-auto">
-            <Image
-                //to do: validate there exists an image URL and name for alt text
-                src="/images/encurtido.jpg"
-                alt={props.name!}
-                width={440}
-                height={560}
-            />
-            <div className='mt-4 px-4 py-3 rounded-lg shadow text-center'>
-                <p className='text-xl font-bold text-gray-700'>{props.name}</p>
-                <p className='text-l font-semibold text-rose-400 mt-4'>{props.price} Lps</p>
-                {props.children}
-            </div>
+  return (
+    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+      <div className="relative aspect-[4/5] w-full max-w-md mx-auto bg-muted sm:max-w-none">
+        <Image
+          src={src}
+          alt={props.name ?? "Producto"}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          priority
+          unoptimized={remote}
+        />
+      </div>
+      <div className="space-y-3 p-6 sm:p-8">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight text-card-foreground sm:text-3xl">
+            {props.name}
+          </h2>
+          {props.description ? (
+            <p className="mt-3 text-pretty text-muted-foreground leading-relaxed">
+              {props.description}
+            </p>
+          ) : null}
         </div>
-
-    )
+        <div className="flex flex-wrap items-baseline gap-2 border-t border-border pt-4">
+          <span className="text-sm font-medium text-muted-foreground">Precio</span>
+          <span className="text-2xl font-bold tabular-nums text-primary">
+            {props.price} Lps
+          </span>
+        </div>
+        {props.children}
+      </div>
+    </div>
+  );
 }

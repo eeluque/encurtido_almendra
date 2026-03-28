@@ -1,12 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
-module.exports = {
   images: {
-    remotePatterns: [new URL('http://placeimg.com/**')],
+    remotePatterns: [
+      { protocol: "http", hostname: "placeimg.com", pathname: "/**" },
+      { protocol: "https", hostname: "placeimg.com", pathname: "/**" },
+    ],
   },
-}
+};
 
 export default nextConfig;

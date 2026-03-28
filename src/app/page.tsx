@@ -1,29 +1,46 @@
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 import Product_Tile from "./components/Product_Tile";
-import ViewProductLink from "./components/ViewProductLink";
 import dbProvider from "./db/index";
 import { IProduct } from "./apis/products";
 import Hero from "./components/Hero";
-import { neon } from "@neondatabase/serverless";
 
 export default async function Home() {
-
-  const sql = neon(process.env.DATABASE_URL!);
   const db = new dbProvider();
   const products: IProduct[] = await db.getProducts();
-  return (
 
+  return (
     <>
       <Hero />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 place-items-center">
-        {products!.map(product => {
-          return (
-            <Product_Tile key={product.id} name={product.name} description={product.description} price={product.price} imageURL={product.image_url} product_id={product.id}>
-              <ViewProductLink product_id={product.id}></ViewProductLink>
-            </Product_Tile>
-          )
-        })}
-      </div>
+      <section
+        id="catalogo"
+        className="mx-auto max-w-6xl scroll-mt-24 px-4 py-14 sm:px-6 sm:py-16 lg:px-8"
+        aria-labelledby="catalogo-heading"
+      >
+        <div className="mb-10 max-w-2xl">
+          <h2
+            id="catalogo-heading"
+            className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+          >
+            Nuestros productos
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Elegí un frasco y descubrí ingredientes, precio y recetas que combinan.
+          </p>
+        </div>
+        <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+          {products.map((product) => (
+            <li key={product.id} className="list-none">
+              <Product_Tile
+                product_id={product.id}
+                name={product.name}
+                description={product.description}
+                price={product.price}
+                imageURL={product.image_url}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }
