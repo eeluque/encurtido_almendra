@@ -1,4 +1,6 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import WhatsAppButton from "./WhatsAppButton";
 
 const FALLBACK = "/images/encurtido.jpg";
 
@@ -50,6 +52,10 @@ export default function ProductDetailTile(props: ProductDetailTileProps) {
           <span className="text-2xl font-bold tabular-nums text-primary">
             {props.price} Lps
           </span>
+          <WhatsAppButton
+            productName={props.name}
+            productPrice={props.price}
+          />
         </div>
         {props.children}
       </div>
